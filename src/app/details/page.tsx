@@ -40,47 +40,60 @@ export default async function Details({ searchParams }: PageProps) {
   console.log('montant', montant, 'montantTTC', montantTTC, 'datePaiement', datePaiement, 'dateLecture', dateLecture);
 
   return (
-    <div className="p-4 flex justify-center items-center min-h-screen bg-gray-100">
-      <div className="flex gap-4">
-        <div className="w-[200px] bg-white">
-          <div className="border border-red-500">
-            <div className="bg-[#D8ECF5] p-4">
-              <div className="text-3xl font-bold text-center mb-2">{montant}</div>
+    <div className="p-8 flex justify-center items-center min-h-screen bg-gray-100">
+      <div className="grid grid-cols-1 md:grid-cols-4 gap-6 w-full max-w-5xl">
+        {/* Amount to Pay Card */}
+        <div className="bg-white rounded-lg shadow-md overflow-hidden">
+          <div className="border-t-4 border-red-500">
+            <div className="p-6">
+              <div className="text-4xl font-bold text-center text-gray-800 mb-3">
+                {montant}
+              </div>
               <div className="text-red-500 text-center">
-                <div className="text-xs">(19)المبلغ المطلوب</div>
-                <div className="text-sm">Montant à payer</div>
+                <div className="text-sm font-medium mb-1">(19)المبلغ المطلوب</div>
+                <div className="text-base">Montant à payer</div>
               </div>
             </div>
           </div>
         </div>
 
-        <div className="w-[150px] bg-white">
-          <div className="border border-[#97CCE6]">
-            <div className="bg-[#D8ECF5] p-4">
-              <div className="text-center text-sm font-bold">
+        {/* Total Amount Card */}
+        <div className="bg-white rounded-lg shadow-md overflow-hidden">
+          <div className="border-t-4 border-blue-400">
+            <div className="p-6">
+              <div className="text-sm text-gray-500 text-center mb-2">
+                Montant TTC
+              </div>
+              <div className="text-2xl font-bold text-center text-gray-800">
                 {montantTTC}
               </div>
             </div>
           </div>
         </div>
 
-        <div className="w-[150px] bg-white">
-          <div className="border border-red-500">
-            <div className="bg-[#D8ECF5] p-4">
-              <div className="text-center">
-                <div className="text-xs mb-2">الرجاء الدفع قبل</div>
-                <div className="font-bold">{datePaiement}</div>
+        {/* Payment Due Date Card */}
+        <div className="bg-white rounded-lg shadow-md overflow-hidden">
+          <div className="border-t-4 border-red-500">
+            <div className="p-6">
+              <div className="text-sm text-gray-500 text-center mb-3">
+                الرجاء الدفع قبل
+              </div>
+              <div className="text-xl font-bold text-center text-gray-800">
+                {datePaiement}
               </div>
             </div>
           </div>
         </div>
 
-        <div className="w-[150px] bg-white">
-          <div className="border border-[#97CCE6]">
-            <div className="bg-[#D8ECF5] p-4">
-              <div className="text-center">
-                <div className="text-xs mb-2">التاريخ المقبل لقراءة العداد</div>
-                <div className="font-bold">{dateLecture}</div>
+        {/* Next Reading Date Card */}
+        <div className="bg-white rounded-lg shadow-md overflow-hidden">
+          <div className="border-t-4 border-blue-400">
+            <div className="p-6">
+              <div className="text-sm text-gray-500 text-center mb-3">
+                التاريخ المقبل لقراءة العداد
+              </div>
+              <div className="text-xl font-bold text-center text-gray-800">
+                {dateLecture}
               </div>
             </div>
           </div>
